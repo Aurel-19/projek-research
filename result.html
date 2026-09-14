@@ -17,7 +17,7 @@
             <p class="text-sm text-slate-500 mt-1" id="resSubtitle">Berdasarkan Akumulasi Skor Algoritma 31 Poin</p>
         </div>
 
-        <!-- Risk Card -->
+        <!-- Card Tampilan Hasil Risiko -->
         <div id="riskCard" class="p-8 rounded-2xl border mb-10 transition-all">
             <h2 class="text-xl sm:text-2xl font-bold mb-3 text-center" id="riskTitle">Hasil Skrining</h2>
             
@@ -32,13 +32,13 @@
                 <div id="progressBar" class="h-full transition-all duration-1000 rounded-full" style="width: 0%;"></div>
             </div>
 
-            <!-- Pesan Teks Risiko -->
-            <div class="mt-6 text-sm leading-relaxed space-y-3" id="rekomendasiText">
-                <!-- Isi Deskripsi Dinamis -->
+            <!-- Teks Pesan Full Deskripsi -->
+            <div class="mt-6 text-sm leading-relaxed space-y-4 text-left" id="rekomendasiText">
+                <!-- Dideskripsikan secara dinamis oleh JavaScript -->
             </div>
         </div>
 
-        <!-- Detail Variabel -->
+        <!-- Detail Rincian Variabel -->
         <div class="space-y-6">
             <h3 class="text-lg font-bold text-slate-800 border-b pb-3" id="lblDetailTitle">Rincian Variabel & Skor</h3>
             
@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <!-- Tombol Navigasi -->
+        <!-- Tombol Aksi Navigasi -->
         <div class="mt-10 pt-6 border-t border-slate-100 flex space-x-4">
             <button onclick="window.print()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all text-sm sm:text-base" id="btnPrint">
                 Cetak Hasil (PDF)
@@ -80,7 +80,7 @@
             return isNaN(parsed) ? 0 : parsed;
         }
 
-        // BACA DATA
+        // AMBIL DATA DARI WEB STORAGE (localStorage / sessionStorage fallback)
         let rawData = localStorage.getItem('healthResearchData');
         if (!rawData) {
             rawData = sessionStorage.getItem('healthResearchData');
@@ -99,7 +99,7 @@
 
             const lang = data.lang || 'id';
 
-            // Kamus Teks Deskripsi Hasil Risiko
+            // DICTIONARY LENGKAP TANPA DINGKAS/DIPENDEKKAN
             const textDict = {
                 id: {
                     resBadge: "Hasil Riset",
@@ -113,21 +113,24 @@
                     btnPrint: "Cetak Hasil (PDF)",
                     btnRetry: "Isi Ulang Kuesioner",
 
-                    // Kategori Rendah (< 30%)
+                    // KATEGORI 1: SKOR RISIKO < 30% (RISIKO RENDAH)
                     lowTitle: "Hasil Skrining: Risiko Rendah 🎉",
                     lowDesc: `<p>Kerja bagus! Tubuh dan gaya hidupmu saat ini berada dalam kondisi risiko rendah terhadap diabetes dan gangguan ginjal.</p>
-                              <p>Tetap pertahankan kebiasaan baik ini ya! Pastikan kamu selalu aktif bergerak minimal 30 menit sehari, tidur cukup 7-9 jam, dan batasi konsumsi jajanan manis serta makanan instan kemasan agar ginjal dan organ tubuhmu tetap berfungsi optimal hingga tua nanti.</p>`,
+                              <p>Tetap pertahankan kebiasaan baik ini ya!</p>
+                              <p>Pastikan kamu selalu aktif bergerak minimal 30 menit sehari, tidur cukup 7-9 jam, dan batasi konsumsi jajanan manis serta makanan instan kemasan agar ginjal dan organ tubuhmu tetap berfungsi optimal hingga tua nanti.</p>`,
 
-                    // Kategori Sedang (30% - 60%)
+                    // KATEGORI 2: SKOR RISIKO 30% - 60% (RISIKO SEDANG)
                     medTitle: "Hasil Skrining: Risiko Sedang ⚠️",
                     medDesc: `<p>Perhatian! Gaya hidup dan riwayat kesehatanmu menunjukkan tingkat risiko sedang terhadap diabetes atau gangguan fungsi ginjal.</p>
                               <p>Langkah pencegahan dini sangat penting mulai hari ini! Yuk, kurangi frekuensi minum manis atau makanan cepat saji.</p>
                               <p>Biasakan minum air putih minimal 8 gelas per hari dan mulailah berolahraga secara teratur agar berat badanmu tetap ideal dan sensitivitas insulin tubuhmu terjaga.</p>`,
 
-                    // Kategori Tinggi (> 60%)
+                    // KATEGORI 3: SKOR RISIKO > 60% (RISIKO TINGGI)
                     highTitle: "Hasil Skrining: Risiko Tinggi 📛",
                     highDesc: `<p>Peringatan! Kamu berada dalam kategori risiko tinggi. Beberapa parameter fisik, gejala tubuh, atau pola makanmu memerlukan perhatian medis.</p>
-                               <p><strong>Saran Tindakan:</strong><br>Jangan panik, hasil ini merupakan deteksi dini awal. Sangat disarankan untuk segera berkonsultasi dengan dokter di fasilitas kesehatan terdekat. Mintalah saran untuk melakukan skrining laboratorium penunjang seperti pemeriksaan kadar gula darah (HbA1c) dan cek fungsi ginjal lewat urine (kreatinin).</p>`
+                               <p><strong>Saran Tindakan:</strong><br>
+                               Jangan panik, hasil ini merupakan deteksi dini awal.<br>
+                               Sangat disarankan untuk segera berkonsultasi dengan dokter di fasilitas kesehatan terdekat. Mintalah saran untuk melakukan skrining laboratorium penunjang seperti pemeriksaan kadar gula darah (HbA1c) dan cek fungsi ginjal lewat urine (kreatinin).</p>`
                 },
                 en: {
                     resBadge: "Research Result",
@@ -141,27 +144,30 @@
                     btnPrint: "Print Result (PDF)",
                     btnRetry: "Retake Questionnaire",
 
-                    // Kategori Rendah (< 30%)
+                    // CATEGORY 1: LOW RISK (< 30%)
                     lowTitle: "Screening Result: Low Risk 🎉",
-                    lowDesc: `<p>Great job! Your current physical state and lifestyle put you at low risk for diabetes and kidney disorders.</p>
-                              <p>Keep up the good work! Stay physically active for at least 30 minutes a day, get adequate sleep (7-9 hours), and limit sugary drinks/processed foods so your kidney and organs remain healthy as you age.</p>`,
+                    lowDesc: `<p>Great job! Your body and lifestyle are currently at low risk for diabetes and kidney disorders.</p>
+                              <p>Keep up these good habits!</p>
+                              <p>Make sure to stay active for at least 30 minutes a day, get 7-9 hours of adequate sleep, and limit sugary snacks and packaged instant foods so your kidneys and organs remain functioning optimally into old age.</p>`,
 
-                    // Kategori Sedang (30% - 60%)
+                    // CATEGORY 2: MODERATE RISK (30% - 60%)
                     medTitle: "Screening Result: Moderate Risk ⚠️",
                     medDesc: `<p>Attention! Your lifestyle and health history indicate a moderate risk of diabetes or kidney function decline.</p>
-                              <p>Early prevention steps are crucial starting today! Reduce your sugary beverage or fast food consumption.</p>
-                              <p>Drink at least 8 glasses of water daily and exercise regularly to maintain an ideal body weight and optimal insulin sensitivity.</p>`,
+                              <p>Early prevention steps are crucial starting today! Cut back on sugary drinks and fast food.</p>
+                              <p>Make it a habit to drink at least 8 glasses of water daily and start exercising regularly to keep your body weight ideal and maintain healthy insulin sensitivity.</p>`,
 
-                    // Kategori Tinggi (> 60%)
+                    // CATEGORY 3: HIGH RISK (> 60%)
                     highTitle: "Screening Result: High Risk 📛",
-                    highDesc: `<p>Warning! You are in the high-risk category. Some of your physical parameters, symptoms, or dietary habits require medical attention.</p>
-                               <p><strong>Recommended Action:</strong><br>Don't panic, this result serves as an early screening indicator. It is highly recommended to consult a doctor at the nearest health facility. Ask for guidance on diagnostic lab tests such as blood sugar levels (HbA1c) and kidney function tests via urine (creatinine).</p>`
+                    highDesc: `<p>Warning! You fall into the high-risk category. Several physical parameters, bodily symptoms, or dietary habits require medical attention.</p>
+                               <p><strong>Recommended Action:</strong><br>
+                               Don't panic, this result serves as an early screening indicator.<br>
+                               It is strongly recommended to consult a doctor at the nearest healthcare facility as soon as possible. Ask for guidance on supporting lab tests such as blood sugar levels (HbA1c) and kidney function tests via urine (creatinine).</p>`
                 }
             };
 
             const t = textDict[lang];
 
-            // Render Text Umum
+            // Render Elemen Umum
             document.getElementById('resBadge').innerText = t.resBadge;
             document.getElementById('resTitle').innerText = t.resTitle;
             document.getElementById('resSubtitle').innerText = t.resSubtitle;
@@ -173,13 +179,13 @@
             document.getElementById('btnPrint').innerText = t.btnPrint;
             document.getElementById('btnRetry').innerText = t.btnRetry;
 
-            // Render Detail Variabel
+            // Render Rincian Informasi
             document.getElementById('resGender').innerText = data.jenis_kelamin || '-';
             document.getElementById('resUsia').innerText = `${safeNum(data.usia_tahun)} ${lang === 'en' ? 'Years' : 'Tahun'}`;
             document.getElementById('resTBWB').innerText = `${safeNum(data.tinggi_badan_cm)} cm / ${safeNum(data.berat_badan_kg)} kg`;
             document.getElementById('resIMT').innerText = `${data.indeks_massa_tubuh || '0.0'} (${safeNum(data.skor_indeks_massa_tubuh)} Poin)`;
 
-            // Hitung & Render Persentase Risiko
+            // Perhitungan Persentase
             const skorTotal = safeNum(data.skor_total);
             let persentase = safeNum(data.persentase_risiko);
 
@@ -190,7 +196,7 @@
             document.getElementById('persentaseText').innerText = persentase.toFixed(1);
             document.getElementById('skorDetailText').innerText = `Skor Total: ${skorTotal} / 31 Poin`;
 
-            // UI Card Risk
+            // UI Card Hasil Risiko
             const card = document.getElementById('riskCard');
             const title = document.getElementById('riskTitle');
             const progressBar = document.getElementById('progressBar');
@@ -200,25 +206,25 @@
                 progressBar.style.width = `${Math.min(persentase, 100)}%`;
             }, 100);
 
-            // Logika Pembagian Kategori Risiko
+            // Klasifikasi Berdasarkan Kategori Risiko
             if (persentase < 30) {
                 // RISIKO RENDAH (< 30%)
-                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-emerald-50/60 border-emerald-200 text-emerald-950";
-                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-emerald-700";
+                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-emerald-50/70 border-emerald-200 text-emerald-950";
+                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-emerald-800";
                 progressBar.className = "h-full transition-all duration-1000 rounded-full bg-emerald-500";
                 title.innerText = t.lowTitle;
                 rekomendasi.innerHTML = t.lowDesc;
             } else if (persentase >= 30 && persentase <= 60) {
                 // RISIKO SEDANG (30% - 60%)
-                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-amber-50/60 border-amber-200 text-amber-950";
-                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-amber-700";
+                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-amber-50/70 border-amber-200 text-amber-950";
+                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-amber-800";
                 progressBar.className = "h-full transition-all duration-1000 rounded-full bg-amber-500";
                 title.innerText = t.medTitle;
                 rekomendasi.innerHTML = t.medDesc;
             } else {
                 // RISIKO TINGGI (> 60%)
-                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-rose-50/60 border-rose-200 text-rose-950";
-                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-rose-700";
+                card.className = "p-8 rounded-2xl border mb-10 transition-all bg-rose-50/70 border-rose-200 text-rose-950";
+                title.className = "text-xl sm:text-2xl font-bold mb-3 text-center text-rose-800";
                 progressBar.className = "h-full transition-all duration-1000 rounded-full bg-rose-500";
                 title.innerText = t.highTitle;
                 rekomendasi.innerHTML = t.highDesc;
