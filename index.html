@@ -21,37 +21,37 @@
         <!-- Form Utama -->
         <form id="healthForm" class="space-y-12">
 
-            <!-- ================= HALAMAN 1: PROFIL FISIK & DEMOGRAFI ================= -->
+            <!-- ================= KATEGORI 1: VARIABEL PROFIL FISIK DAN DEMOGRAFI ================= -->
             <div class="space-y-6">
                 <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
                     <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">1</div>
                     <h2 class="text-xl font-bold text-slate-800">Profil Fisik & Demografi</h2>
                 </div>
 
-                <!-- Pertanyaan 1 -->
+                <!-- jenis_kelamin -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3">
-                        1. Apa jenis kelamin biologis kamu? <span class="text-red-500">*</span>
+                        Jenis Kelamin Biologis <span class="text-red-500">*</span>
                     </label>
                     <div class="grid grid-cols-2 gap-4">
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="jenis_kelamin" value="Laki-laki" class="peer hidden" required>
+                            <input type="radio" name="jenis_kelamin" value="Laki-laki" data-poin="0" class="peer hidden" required>
                             <span class="text-slate-700 font-medium peer-checked:text-indigo-600">Laki-laki</span>
                         </label>
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="jenis_kelamin" value="Perempuan" class="peer hidden" required>
+                            <input type="radio" name="jenis_kelamin" value="Perempuan" data-poin="0" class="peer hidden" required>
                             <span class="text-slate-700 font-medium peer-checked:text-indigo-600">Perempuan</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 2 -->
+                <!-- usia_tahun -->
                 <div>
-                    <label for="usia" class="block text-sm font-semibold text-slate-700 mb-2">
-                        2. Berapa usia kamu saat ini? <span class="text-red-500">*</span>
+                    <label for="usia_tahun" class="block text-sm font-semibold text-slate-700 mb-2">
+                        Usia saat ini (10 - 19 tahun) <span class="text-red-500">*</span>
                     </label>
                     <div class="relative rounded-md">
-                        <input type="number" id="usia" name="usia" min="1" max="120" placeholder="Contoh: 25" required
+                        <input type="number" id="usia_tahun" name="usia_tahun" min="10" max="19" placeholder="Contoh: 16" required
                             class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 transition-all pr-16 placeholder:text-slate-400">
                         <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
                             <span class="text-slate-400 text-sm">tahun</span>
@@ -59,13 +59,13 @@
                     </div>
                 </div>
 
-                <!-- Pertanyaan 3 -->
+                <!-- tinggi_badan_cm -->
                 <div>
-                    <label for="tinggi_badan" class="block text-sm font-semibold text-slate-700 mb-2">
-                        3. Berapa tinggi badan kamu dalam centimeter? <span class="text-red-500">*</span>
+                    <label for="tinggi_badan_cm" class="block text-sm font-semibold text-slate-700 mb-2">
+                        Tinggi Badan <span class="text-red-500">*</span>
                     </label>
                     <div class="relative rounded-md">
-                        <input type="number" id="tinggi_badan" name="tinggi_badan" min="30" max="250" placeholder="Contoh: 165" required
+                        <input type="number" id="tinggi_badan_cm" name="tinggi_badan_cm" min="50" max="250" placeholder="Contoh: 165" required
                             class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 transition-all pr-16 placeholder:text-slate-400">
                         <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
                             <span class="text-slate-400 text-sm">cm</span>
@@ -73,13 +73,13 @@
                     </div>
                 </div>
 
-                <!-- Pertanyaan 4 -->
+                <!-- berat_badan_kg -->
                 <div>
-                    <label for="berat_badan" class="block text-sm font-semibold text-slate-700 mb-2">
-                        4. Berapa berat badan kamu saat ini dalam kilogram? <span class="text-red-500">*</span>
+                    <label for="berat_badan_kg" class="block text-sm font-semibold text-slate-700 mb-2">
+                        Berat Badan <span class="text-red-500">*</span>
                     </label>
                     <div class="relative rounded-md">
-                        <input type="number" id="berat_badan" name="berat_badan" min="10" max="300" step="0.1" placeholder="Contoh: 60" required
+                        <input type="number" id="berat_badan_kg" name="berat_badan_kg" min="20" max="300" step="0.1" placeholder="Contoh: 60" required
                             class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 transition-all pr-16 placeholder:text-slate-400">
                         <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
                             <span class="text-slate-400 text-sm">kg</span>
@@ -88,274 +88,211 @@
                 </div>
             </div>
 
-            <!-- ================= HALAMAN 2: POLA MAKAN & HIDRASI ================= -->
+            <!-- ================= KATEGORI 2: VARIABEL POLA MAKAN DAN HIDRASI ================= -->
             <div class="space-y-6 pt-4 border-t border-slate-100">
                 <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
                     <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">2</div>
                     <h2 class="text-xl font-bold text-slate-800">Pola Makan & Hidrasi</h2>
                 </div>
 
-                <!-- Pertanyaan 5 -->
+                <!-- frekuensi_minuman_manis -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        5. Seberapa sering kamu minum boba, kopi susu kekinian, soda, teh kemasan, atau minuman manis lainnya dalam seminggu? <span class="text-red-500">*</span>
+                        Frekuensi Minuman Manis (boba, kopi susu, soda, teh kemasan, dll) <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="minuman_manis" value="A" data-text="Jarang atau tidak pernah sama sekali" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Jarang atau tidak pernah sama sekali</span>
-                            </div>
+                            <input type="radio" name="frekuensi_minuman_manis" value="Opsi A" data-poin="0" data-text="Jarang atau tidak pernah" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Jarang atau tidak pernah)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="minuman_manis" value="B" data-text="Kadang-kadang sekitar 1 sampai 3 kali seminggu" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Kadang-kadang sekitar 1 sampai 3 kali seminggu</span>
-                            </div>
+                            <input type="radio" name="frekuensi_minuman_manis" value="Opsi B" data-poin="1" data-text="Kadang-kadang 1-3 kali seminggu" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Kadang-kadang 1-3 kali seminggu)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="minuman_manis" value="C" data-text="Sering banget hampir setiap hari atau lebih dari sekali sehari" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Sering banget hampir setiap hari atau lebih dari sekali sehari</span>
-                            </div>
+                            <input type="radio" name="frekuensi_minuman_manis" value="Opsi C" data-poin="3" data-text="Sering banget hampir setiap hari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi C (Sering banget hampir setiap hari)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 6 -->
+                <!-- frekuensi_makanan_instan -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        6. Seberapa sering kamu makan mi instan, gorengan, ayam goreng cepat saji, atau camilan asin kemasan? <span class="text-red-500">*</span>
+                        Frekuensi Makanan Instan / Olahan (mi instan, gorengan, fast food, camilan asin) <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="makanan_olahan" value="A" data-text="Jarang (<= 2 kali seminggu)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Jarang kurang dari atau sama dengan 2 kali seminggu</span>
-                            </div>
+                            <input type="radio" name="frekuensi_makanan_instan" value="Opsi A" data-poin="0" data-text="Jarang (<= 2 kali seminggu)" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Jarang kurang dari atau sama dengan 2 kali seminggu)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="makanan_olahan" value="B" data-text="Lumayan sering (3-5 kali seminggu)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Lumayan sering sekitar 3 sampai 5 kali seminggu</span>
-                            </div>
+                            <input type="radio" name="frekuensi_makanan_instan" value="Opsi B" data-poin="2" data-text="Lumayan sering (3-5 kali seminggu)" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Lumayan sering 3-5 kali seminggu)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="makanan_olahan" value="C" data-text="Setiap hari" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Setiap hari</span>
-                            </div>
+                            <input type="radio" name="frekuensi_makanan_instan" value="Opsi C" data-poin="3" data-text="Setiap hari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi C (Setiap hari)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 7 -->
+                <!-- volume_air_putih -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        7. Berapa banyak air putih yang kamu minum dalam satu hari? <span class="text-red-500">*</span>
+                        Volume Konsumsi Air Putih <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="air_putih" value="A" data-text="Banyak (>= 8 gelas / 2 liter ke atas)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Banyak minimal 8 gelas atau sekitar 2 liter ke atas</span>
-                            </div>
+                            <input type="radio" name="volume_air_putih" value="Opsi A" data-poin="0" data-text="Banyak (minimal 8 gelas sehari)" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Banyak minimal 8 gelas sehari)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="air_putih" value="B" data-text="Sedikit (4-7 gelas / 1-1,5 liter)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Sedikit sekitar 4 sampai 7 gelas atau 1 hingga 1,5 liter</span>
-                            </div>
+                            <input type="radio" name="volume_air_putih" value="Opsi B" data-poin="1" data-text="Sedikit (sekitar 4-7 gelas sehari)" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Sedikit sekitar 4-7 gelas sehari)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="air_putih" value="C" data-text="Kurang banget (< 4 gelas sehari)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Kurang banget kurang dari 4 gelas sehari</span>
-                            </div>
+                            <input type="radio" name="volume_air_putih" value="Opsi C" data-poin="3" data-text="Kurang banget (< 4 gelas sehari)" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi C (Kurang banget kurang dari 4 gelas sehari)</span>
                         </label>
                     </div>
                 </div>
             </div>
 
-            <!-- ================= HALAMAN 3: AKTIVITAS & ISTIRAHAT ================= -->
+            <!-- ================= KATEGORI 3: VARIABEL AKTIVITAS DAN ISTIRAHAT ================= -->
             <div class="space-y-6 pt-4 border-t border-slate-100">
                 <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
                     <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">3</div>
                     <h2 class="text-xl font-bold text-slate-800">Aktivitas & Istirahat</h2>
                 </div>
 
-                <!-- Pertanyaan 8 -->
+                <!-- rutinitas_olahraga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        8. Apakah kamu rutin berolahraga atau melakukan aktivitas fisik berat seperti lari, bersepeda, futsal, atau senam selama minimal 30 menit? <span class="text-red-500">*</span>
+                        Rutinitas Olahraga (minimal 30 menit) <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="olahraga" value="A" data-text="Rutin (3-5 kali seminggu)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Ya rutin hampir setiap hari sekitar 3 sampai 5 kali seminggu</span>
-                            </div>
+                            <input type="radio" name="rutinitas_olahraga" value="Opsi A" data-poin="0" data-text="Rutin hampir setiap hari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Ya rutin hampir setiap hari)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="olahraga" value="B" data-text="Jarang (1-2 kali seminggu)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Jarang-jarang hanya 1 sampai 2 kali seminggu</span>
-                            </div>
+                            <input type="radio" name="rutinitas_olahraga" value="Opsi B" data-poin="1" data-text="Jarang-jarang 1-2 kali seminggu" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Jarang-jarang 1-2 kali seminggu)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="olahraga" value="C" data-text="Hampir tidak pernah / suka rebahan" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Jarang banget atau hampir tidak pernah karena lebih suka rebahan</span>
-                            </div>
+                            <input type="radio" name="rutinitas_olahraga" value="Opsi C" data-poin="3" data-text="Jarang banget / hampir tidak pernah" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi C (Jarang banget atau hampir tidak pernah)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 9 -->
+                <!-- durasi_screen_time -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        9. Di luar jam sekolah, berapa jam biasanya kamu habiskan waktu duduk santai sambil main HP, laptop, atau nonton TV dalam sehari? <span class="text-red-500">*</span>
+                        Durasi Screen Time di Luar Jam Sekolah/Kerja <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="screen_time" value="A" data-text="Kurang dari 2 jam sehari" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Kurang dari 2 jam sehari</span>
-                            </div>
+                            <input type="radio" name="durasi_screen_time" value="Opsi A" data-poin="0" data-text="Kurang dari 2 jam sehari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Kurang dari 2 jam sehari)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="screen_time" value="B" data-text="Sekitar 2 sampai 4 jam sehari" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Sekitar 2 sampai 4 jam sehari</span>
-                            </div>
+                            <input type="radio" name="durasi_screen_time" value="Opsi B" data-poin="1" data-text="Sekitar 2-4 jam sehari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Sekitar 2-4 jam sehari)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="screen_time" value="C" data-text="Lebih dari 4 jam sehari" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Lebih dari 4 jam sehari</span>
-                            </div>
+                            <input type="radio" name="durasi_screen_time" value="Opsi C" data-poin="2" data-text="Lebih dari 4 jam sehari" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi C (Lebih dari 4 jam sehari)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 10 -->
+                <!-- durasi_tidur_malam -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        10. Berapa jam biasanya kamu tidur di malam hari? <span class="text-red-500">*</span>
+                        Durasi Tidur Malam <span class="text-red-500">*</span>
                     </label>
                     <div class="space-y-3">
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="durasi_tidur" value="A" data-text="Cukup (7-9 jam semalam)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Cukup dan teratur sekitar 7 sampai 9 jam semalam</span>
-                            </div>
+                            <input type="radio" name="durasi_tidur_malam" value="Opsi A" data-poin="0" data-text="Cukup dan teratur 7-9 jam semalam" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi A (Cukup dan teratur 7-9 jam semalam)</span>
                         </label>
                         <label class="relative flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="durasi_tidur" value="B" data-text="Kurang tidur (< 7 jam / sering begadang)" class="peer hidden" required>
-                            <div class="flex items-start space-x-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Kurang tidur kurang dari 7 jam atau sering begadang</span>
-                            </div>
+                            <input type="radio" name="durasi_tidur_malam" value="Opsi B" data-poin="2" data-text="Kurang tidur atau sering begadang" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">Opsi B (Kurang tidur atau sering begadang)</span>
                         </label>
                     </div>
                 </div>
             </div>
 
-            <!-- ================= HALAMAN 4: RIWAYAT KESEHATAN & GEJALA ================= -->
+            <!-- ================= KATEGORI 4: VARIABEL RIWAYAT KESEHATAN DAN GEJALA ================= -->
             <div class="space-y-6 pt-4 border-t border-slate-100">
                 <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
                     <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">4</div>
                     <h2 class="text-xl font-bold text-slate-800">Riwayat Kesehatan & Gejala</h2>
                 </div>
 
-                <!-- Pertanyaan 11 -->
+                <!-- riwayat_diabetes_keluarga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        11. Apakah ada orang tua kandung, kakek, nenek, atau saudara kandung kamu yang menderita penyakit diabetes atau kencing manis? <span class="text-red-500">*</span>
+                        Riwayat Diabetes pada Keluarga Kandung (Orang tua, kakek, nenek, saudara) <span class="text-red-500">*</span>
                     </label>
                     <div class="grid grid-cols-2 gap-4">
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="riwayat_diabetes" value="A" data-text="Tidak ada" class="peer hidden" required>
-                            <span class="text-slate-700 text-sm font-medium">A. Tidak ada</span>
+                            <input type="radio" name="riwayat_diabetes_keluarga" value="false" data-poin="0" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">False (Tidak Ada)</span>
                         </label>
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="riwayat_diabetes" value="B" data-text="Ada" class="peer hidden" required>
-                            <span class="text-slate-700 text-sm font-medium">B. Ada</span>
+                            <input type="radio" name="riwayat_diabetes_keluarga" value="true" data-poin="5" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">True (Ada)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 12 -->
+                <!-- riwayat_hipertensi_ginjal_keluarga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3 leading-relaxed">
-                        12. Apakah ada keluarga inti kamu seperti orang tua atau saudara kandung yang punya riwayat tekanan darah tinggi atau penyakit gangguan ginjal? <span class="text-red-500">*</span>
+                        Riwayat Hipertensi / Gangguan Ginjal pada Keluarga Inti <span class="text-red-500">*</span>
                     </label>
                     <div class="grid grid-cols-2 gap-4">
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="riwayat_hipertensi_ginjal" value="A" data-text="Tidak ada" class="peer hidden" required>
-                            <span class="text-slate-700 text-sm font-medium">A. Tidak ada</span>
+                            <input type="radio" name="riwayat_hipertensi_ginjal_keluarga" value="false" data-poin="0" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">False (Tidak Ada)</span>
                         </label>
                         <label class="relative flex items-center justify-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="radio" name="riwayat_hipertensi_ginjal" value="B" data-text="Ada" class="peer hidden" required>
-                            <span class="text-slate-700 text-sm font-medium">B. Ada</span>
+                            <input type="radio" name="riwayat_hipertensi_ginjal_keluarga" value="true" data-poin="4" class="peer hidden" required>
+                            <span class="text-slate-700 text-sm font-medium">True (Ada)</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Pertanyaan 13 (Checkbox) -->
+                <!-- Variabel Gejala (Checkbox) -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1 leading-relaxed">
-                        13. Apakah kamu belakangan ini sering merasakan gejala-gejala berikut tanpa alasan yang jelas? <span class="text-red-500">*</span>
+                        Gejala yang sedang dialami belakangan ini:
                     </label>
-                    <p class="text-xs text-indigo-600 font-medium mb-3">(Bisa pilih lebih dari satu jawaban)</p>
+                    <p class="text-xs text-indigo-600 font-medium mb-3">(Centang jika merasakan gejala berikut)</p>
                     
                     <div class="space-y-3">
                         <label class="relative flex items-start p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="checkbox" name="gejala" value="A" data-text="Sering haus berlebih & kencing malam" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                            <div class="flex items-start space-x-3 ml-3">
-                                <span class="font-bold text-indigo-600">A.</span>
-                                <span class="text-slate-700 text-sm font-medium">Sering merasa haus berlebih dan bolak-balik buang air kecil di malam hari</span>
-                            </div>
+                            <input type="checkbox" id="gejala_sering_haus_kencing_malam" name="gejala_sering_haus_kencing_malam" data-poin="2" class="gejala-checkbox mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700 text-sm font-medium ml-3">Sering haus berlebih & kencing malam (gejala_sering_haus_kencing_malam)</span>
                         </label>
 
                         <label class="relative flex items-start p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="checkbox" name="gejala" value="B" data-text="Sering lelah, lemas, & mengantuk" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                            <div class="flex items-start space-x-3 ml-3">
-                                <span class="font-bold text-indigo-600">B.</span>
-                                <span class="text-slate-700 text-sm font-medium">Sering merasa lelah, lemas, dan mengantuk padahal tidak beraktivitas berat</span>
-                            </div>
+                            <input type="checkbox" id="gejala_mudah_lelah_lemas" name="gejala_mudah_lelah_lemas" data-poin="1" class="gejala-checkbox mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700 text-sm font-medium ml-3">Mudah lelah & lemas (gejala_mudah_lelah_lemas)</span>
                         </label>
 
                         <label class="relative flex items-start p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="checkbox" name="gejala" value="C" data-text="Urine berbusa tebal" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                            <div class="flex items-start space-x-3 ml-3">
-                                <span class="font-bold text-indigo-600">C.</span>
-                                <span class="text-slate-700 text-sm font-medium">Saat buang air kecil urine terlihat berbusa tebal dan busanya tidak hilang setelah disiram</span>
-                            </div>
+                            <input type="checkbox" id="gejala_urine_berbusa_tebal" name="gejala_urine_berbusa_tebal" data-poin="2" class="gejala-checkbox mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700 text-sm font-medium ml-3">Urine berbusa tebal (gejala_urine_berbusa_tebal)</span>
                         </label>
 
-                        <label class="relative flex items-start p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all">
-                            <input type="checkbox" name="gejala" value="D" data-text="Tidak merasakan gejala apapun" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                            <div class="flex items-start space-x-3 ml-3">
-                                <span class="font-bold text-indigo-600">D.</span>
-                                <span class="text-slate-700 text-sm font-medium">Tidak merasakan satu pun gejala di atas</span>
-                            </div>
+                        <label class="relative flex items-start p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50 transition-all bg-slate-50">
+                            <input type="checkbox" id="gejala_tidak_ada" name="gejala_tidak_ada" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-800 text-sm font-bold ml-3">Tidak merasakan gejala apapun (gejala_tidak_ada)</span>
                         </label>
                     </div>
                 </div>
@@ -375,143 +312,157 @@
         </form>
     </div>
 
-    <!-- SCRIPT HITUNG RUMUS & LOGIKA -->
+    <!-- LOGIKA JAVASCRIPT & CALCULATOR -->
     <script>
+        // Logika Penguncian Variabel Gejala ketika "gejala_tidak_ada" Dicentang
+        const chkTidakAda = document.getElementById('gejala_tidak_ada');
+        const gejalaCheckboxes = document.querySelectorAll('.gejala-checkbox');
+
+        chkTidakAda.addEventListener('change', function() {
+            if (this.checked) {
+                gejalaCheckboxes.forEach(chk => {
+                    chk.checked = false;
+                    chk.disabled = true;
+                    chk.closest('label').classList.add('opacity-50', 'pointer-events-none');
+                });
+            } else {
+                gejalaCheckboxes.forEach(chk => {
+                    chk.disabled = false;
+                    chk.closest('label').classList.remove('opacity-50', 'pointer-events-none');
+                });
+            }
+        });
+
+        // Handler Submit Form
         document.getElementById('healthForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // 1. Ambil nilai dasar profil fisik
+            // 1. KATEGORI 1: PROFIL FISIK & DEMOGRAFI
             const jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked')?.value || '-';
-            const usia = parseFloat(document.getElementById('usia').value) || 0;
-            const tinggiBadanCm = parseFloat(document.getElementById('tinggi_badan').value) || 0;
-            const beratBadanKg = parseFloat(document.getElementById('berat_badan').value) || 0;
+            const usiaTahun = parseInt(document.getElementById('usia_tahun').value) || 0;
+            const tinggiBadanCm = parseFloat(document.getElementById('tinggi_badan_cm').value) || 0;
+            const beratBadanKg = parseFloat(document.getElementById('berat_badan_kg').value) || 0;
 
-            // Hitung Indeks Massa Tubuh (IMT) = Berat(kg) / (Tinggi(m))^2
+            // Rumus IMT = berat_badan_kg / (tinggi_badan_cm / 100)^2
             const tinggiM = tinggiBadanCm / 100;
             const imt = tinggiM > 0 ? (beratBadanKg / (tinggiM * tinggiM)) : 0;
 
-            // Skor IMT (Maks 3 poin)
+            // Bobot Skor IMT
             let skorIMT = 0;
-            if (imt >= 25 && imt < 30) {
-                skorIMT = 2; // Kelebihan berat badan
-            } else if (imt >= 30) {
-                skorIMT = 3; // Obesitas
-            } else if (imt < 18.5) {
-                skorIMT = 1; // Underweight
-            } else {
-                skorIMT = 0; // Normal (18.5 - 24.9)
+            if (imt < 23.0) {
+                skorIMT = 0;
+            } else if (imt >= 23.0 && imt <= 24.9) {
+                skorIMT = 2;
+            } else if (imt >= 25.0) {
+                skorIMT = 4;
             }
 
-            // 2. Ambil Pilihan & Hitung Skor masing-masing parameter
-            
-            // Pertanyaan 5: Minuman Manis (A: 0, B: 2, C: 4) -> Maks 4
-            const elMinuman = document.querySelector('input[name="minuman_manis"]:checked');
-            const valMinuman = elMinuman?.value;
-            const txtMinuman = elMinuman?.dataset.text;
-            let skorMinuman = valMinuman === 'C' ? 4 : (valMinuman === 'B' ? 2 : 0);
+            // 2. KATEGORI 2: POLA MAKAN & HIDRASI
+            const elMinuman = document.querySelector('input[name="frekuensi_minuman_manis"]:checked');
+            const skorMinumanManis = parseInt(elMinuman?.dataset.poin || 0);
 
-            // Pertanyaan 6: Makanan Olahan (A: 0, B: 2, C: 3) -> Maks 3
-            const elMakanan = document.querySelector('input[name="makanan_olahan"]:checked');
-            const valMakanan = elMakanan?.value;
-            const txtMakanan = elMakanan?.dataset.text;
-            let skorMakanan = valMakanan === 'C' ? 3 : (valMakanan === 'B' ? 2 : 0);
+            const elMakanan = document.querySelector('input[name="frekuensi_makanan_instan"]:checked');
+            const skorMakananInstan = parseInt(elMakanan?.dataset.poin || 0);
 
-            // Pertanyaan 7: Air Putih (A: 0, B: 2, C: 3) -> Maks 3
-            const elAir = document.querySelector('input[name="air_putih"]:checked');
-            const valAir = elAir?.value;
-            const txtAir = elAir?.dataset.text;
-            let skorAir = valAir === 'C' ? 3 : (valAir === 'B' ? 2 : 0);
+            const elAir = document.querySelector('input[name="volume_air_putih"]:checked');
+            const skorVolumeAir = parseInt(elAir?.dataset.poin || 0);
 
-            // Pertanyaan 8: Olahraga (A: 0, B: 2, C: 3) -> Maks 3
-            const elOlahraga = document.querySelector('input[name="olahraga"]:checked');
-            const valOlahraga = elOlahraga?.value;
-            const txtOlahraga = elOlahraga?.dataset.text;
-            let skorOlahraga = valOlahraga === 'C' ? 3 : (valOlahraga === 'B' ? 2 : 0);
+            // 3. KATEGORI 3: AKTIVITAS & ISTIRAHAT
+            const elOlahraga = document.querySelector('input[name="rutinitas_olahraga"]:checked');
+            const skorRutinitasOlahraga = parseInt(elOlahraga?.dataset.poin || 0);
 
-            // Pertanyaan 9: Screen Time (A: 0, B: 1, C: 2) -> Maks 2
-            const elScreen = document.querySelector('input[name="screen_time"]:checked');
-            const valScreen = elScreen?.value;
-            const txtScreen = elScreen?.dataset.text;
-            let skorScreen = valScreen === 'C' ? 2 : (valScreen === 'B' ? 1 : 0);
+            const elScreen = document.querySelector('input[name="durasi_screen_time"]:checked');
+            const skorDurasiScreen = parseInt(elScreen?.dataset.poin || 0);
 
-            // Pertanyaan 10: Tidur (A: 0, B: 2) -> Maks 2
-            const elTidur = document.querySelector('input[name="durasi_tidur"]:checked');
-            const valTidur = elTidur?.value;
-            const txtTidur = elTidur?.dataset.text;
-            let skorTidur = valTidur === 'B' ? 2 : 0;
+            const elTidur = document.querySelector('input[name="durasi_tidur_malam"]:checked');
+            const skorDurasiTidur = parseInt(elTidur?.dataset.poin || 0);
 
-            // Pertanyaan 11: Riwayat Diabetes (A: 0, B: 3) -> Maks 3
-            const elDiabetes = document.querySelector('input[name="riwayat_diabetes"]:checked');
-            const valDiabetes = elDiabetes?.value;
-            const txtDiabetes = elDiabetes?.dataset.text;
-            let skorDiabetes = valDiabetes === 'B' ? 3 : 0;
+            // 4. KATEGORI 4: RIWAYAT KESEHATAN & GEJALA
+            const elDiabetes = document.querySelector('input[name="riwayat_diabetes_keluarga"]:checked');
+            const skorRiwayatDiabetes = parseInt(elDiabetes?.dataset.poin || 0);
+            const valRiwayatDiabetes = elDiabetes?.value === 'true';
 
-            // Pertanyaan 12: Riwayat Hipertensi / Ginjal (A: 0, B: 3) -> Maks 3
-            const elGinjal = document.querySelector('input[name="riwayat_hipertensi_ginjal"]:checked');
-            const valGinjal = elGinjal?.value;
-            const txtGinjal = elGinjal?.dataset.text;
-            let skorGinjal = valGinjal === 'B' ? 3 : 0;
+            const elGinjal = document.querySelector('input[name="riwayat_hipertensi_ginjal_keluarga"]:checked');
+            const skorRiwayatGinjal = parseInt(elGinjal?.dataset.poin || 0);
+            const valRiwayatGinjal = elGinjal?.value === 'true';
 
-            // Pertanyaan 13: Gejala (Checkbox Multiple) -> Maks 4
-            const elGejala = document.querySelectorAll('input[name="gejala"]:checked');
-            let selectedGejalaVals = [];
-            let selectedGejalaTexts = [];
-            let skorGejalaHausKencing = 0; // Maks 1
-            let skorGejalaLelahLemas = 0;   // Maks 1
-            let skorGejalaUrineBusa = 0;    // Maks 2
+            // Gejala Checkbox
+            const isTidakAdaGejala = chkTidakAda.checked;
+            let skorHausKencing = 0;
+            let skorLelahLemas = 0;
+            let skorUrineBerbusa = 0;
 
-            elGejala.forEach(chk => {
-                selectedGejalaVals.push(chk.value);
-                selectedGejalaTexts.push(chk.dataset.text);
-                if (chk.value === 'A') skorGejalaHausKencing = 1;
-                if (chk.value === 'B') skorGejalaLelahLemas = 1;
-                if (chk.value === 'C') skorGejalaUrineBusa = 2;
-            });
+            if (!isTidakAdaGejala) {
+                if (document.getElementById('gejala_sering_haus_kencing_malam').checked) skorHausKencing = 2;
+                if (document.getElementById('gejala_mudah_lelah_lemas').checked) skorLelahLemas = 1;
+                if (document.getElementById('gejala_urine_berbusa_tebal').checked) skorUrineBerbusa = 2;
+            }
 
-            // Akumulasi skor gejala
-            const totalSkorGejala = skorGejalaHausKencing + skorGejalaLelahLemas + skorGejalaUrineBusa;
-
-            // ====================================================================
-            // RUMUS AKUMULASI SKOR AKHIR
-            // Max Global = 31 poin
-            // ====================================================================
+            // =====================================================================
+            // RUMUS AKUMULASI SKOR AKHIR APLIKASI
+            // Total Skor Maksimal Global = 31 poin
+            // =====================================================================
             const skorTotal = skorIMT + 
-                              skorMinuman + 
-                              skorMakanan + 
-                              skorAir + 
-                              skorOlahraga + 
-                              skorScreen + 
-                              skorTidur + 
-                              skorDiabetes + 
-                              skorGinjal + 
-                              totalSkorGejala;
+                              skorMinumanManis + 
+                              skorMakananInstan + 
+                              skorVolumeAir + 
+                              skorRutinitasOlahraga + 
+                              skorDurasiScreen + 
+                              skorDurasiTidur + 
+                              skorRiwayatDiabetes + 
+                              skorRiwayatGinjal + 
+                              skorHausKencing + 
+                              skorLelahLemas + 
+                              skorUrineBerbusa;
 
+            // Rumus Hitung Persentase Risiko: (skor_total / 31) * 100
             const persentaseRisiko = ((skorTotal / 31) * 100).toFixed(1);
 
-            // Simpan Data Jawaban & Hasil ke LocalStorage
-            const formData = {
-                jenisKelamin,
-                usia,
-                tinggiBadanCm,
-                beratBadanKg,
-                imt: imt.toFixed(1),
-                skorIMT,
-                jawabanMinuman: txtMinuman,
-                jawabanMakanan: txtMakanan,
-                jawabanAir: txtAir,
-                jawabanOlahraga: txtOlahraga,
-                jawabanScreen: txtScreen,
-                jawabanTidur: txtTidur,
-                jawabanDiabetes: txtDiabetes,
-                jawabanGinjal: txtGinjal,
-                jawabanGejala: selectedGejalaTexts.join(', ') || 'Tidak ada',
-                skorTotal,
-                persentaseRisiko
+            // Simpan seluruh data variabel ke localStorage
+            const payloadData = {
+                jenis_kelamin: jenisKelamin,
+                usia_tahun: usiaTahun,
+                tinggi_badan_cm: tinggiBadanCm,
+                berat_badan_kg: beratBadanKg,
+                indeks_massa_tubuh: imt.toFixed(1),
+                skor_indeks_massa_tubuh: skorIMT,
+                
+                frekuensi_minuman_manis: elMinuman?.dataset.text || '-',
+                skor_frekuensi_minuman_manis: skorMinumanManis,
+                
+                frekuensi_makanan_instan: elMakanan?.dataset.text || '-',
+                skor_frekuensi_makanan_instan: skorMakananInstan,
+                
+                volume_air_putih: elAir?.dataset.text || '-',
+                skor_volume_air_putih: skorVolumeAir,
+                
+                rutinitas_olahraga: elOlahraga?.dataset.text || '-',
+                skor_rutinitas_olahraga: skorRutinitasOlahraga,
+                
+                durasi_screen_time: elScreen?.dataset.text || '-',
+                skor_durasi_screen_time: skorDurasiScreen,
+                
+                durasi_tidur_malam: elTidur?.dataset.text || '-',
+                skor_durasi_tidur_malam: skorDurasiTidur,
+                
+                riwayat_diabetes_keluarga: valRiwayatDiabetes,
+                skor_riwayat_diabetes_keluarga: skorRiwayatDiabetes,
+                
+                riwayat_hipertensi_ginjal_keluarga: valRiwayatGinjal,
+                skor_riwayat_hipertensi_ginjal_keluarga: skorRiwayatGinjal,
+                
+                gejala_sering_haus_kencing_malam: !isTidakAdaGejala && document.getElementById('gejala_sering_haus_kencing_malam').checked,
+                gejala_mudah_lelah_lemas: !isTidakAdaGejala && document.getElementById('gejala_mudah_lelah_lemas').checked,
+                gejala_urine_berbusa_tebal: !isTidakAdaGejala && document.getElementById('gejala_urine_berbusa_tebal').checked,
+                gejala_tidak_ada: isTidakAdaGejala,
+                
+                skor_total: skorTotal,
+                persentase_risiko: persentaseRisiko
             };
 
-            localStorage.setItem('healthResearchData', JSON.stringify(formData));
+            localStorage.setItem('healthResearchData', JSON.stringify(payloadData));
 
-            // Redirect ke result.html
+            // Navigasi ke result.html
             window.location.href = 'result.html';
         });
     </script>
