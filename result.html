@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Riset Skrining Kesehatan</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-enter {
+            animation: pageEnter 700ms ease-out both;
+        }
+
+        .page-enter > * {
+            animation: pageEnter 600ms ease-out both;
+        }
+
+        .page-enter > :nth-child(1) { animation-delay: 100ms; }
+        .page-enter > :nth-child(2) { animation-delay: 180ms; }
+        .page-enter > :nth-child(3) { animation-delay: 260ms; }
+        .page-enter > :nth-child(4) { animation-delay: 340ms; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-enter,
+            .page-enter > * {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 py-12">
 
-    <div class="bg-white rounded-2xl shadow-xl w-full max-w-3xl p-6 sm:p-10 border border-slate-100">
+    <div class="page-enter bg-white rounded-2xl shadow-xl w-full max-w-3xl p-6 sm:p-10 border border-slate-100">
         
         <!-- Header -->
         <div class="text-center border-b border-slate-100 pb-6 mb-8">
