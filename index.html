@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survei Riset Kesehatan / Health Research Survey</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Kuesioner Riset Kesehatan</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 py-12">
@@ -18,7 +17,6 @@
                     Aplikasi Riset Kesehatan
                 </span>
                 
-                <!-- Pemilih Bahasa / Language Selector -->
                 <div class="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl w-fit">
                     <button type="button" id="btnLangID" onclick="setLanguage('id')" 
                         class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-sm">
@@ -49,7 +47,6 @@
                     <h2 class="text-xl font-bold text-slate-800" id="cat1Title">Profil Fisik & Demografi</h2>
                 </div>
 
-                <!-- jenis_kelamin -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblGender">
                         Jenis Kelamin Biologis <span class="text-red-500">*</span>
@@ -66,7 +63,6 @@
                     </div>
                 </div>
 
-                <!-- usia_tahun -->
                 <div>
                     <label for="usia_tahun" class="block text-sm font-semibold text-slate-700 mb-2" id="lblAge">
                         Usia saat ini (10 - 19 tahun) <span class="text-red-500">*</span>
@@ -80,7 +76,6 @@
                     </div>
                 </div>
 
-                <!-- tinggi_badan_cm -->
                 <div>
                     <label for="tinggi_badan_cm" class="block text-sm font-semibold text-slate-700 mb-2" id="lblHeight">
                         Tinggi Badan <span class="text-red-500">*</span>
@@ -94,7 +89,6 @@
                     </div>
                 </div>
 
-                <!-- berat_badan_kg -->
                 <div>
                     <label for="berat_badan_kg" class="block text-sm font-semibold text-slate-700 mb-2" id="lblWeight">
                         Berat Badan <span class="text-red-500">*</span>
@@ -116,7 +110,6 @@
                     <h2 class="text-xl font-bold text-slate-800" id="cat2Title">Pola Makan & Hidrasi</h2>
                 </div>
 
-                <!-- frekuensi_minuman_manis -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblSweetDrinks">
                         Frekuensi Minuman Manis (boba, kopi susu, soda, teh kemasan, dll) <span class="text-red-500">*</span>
@@ -137,7 +130,6 @@
                     </div>
                 </div>
 
-                <!-- frekuensi_makanan_instan -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblFastFood">
                         Frekuensi Makanan Instan / Olahan (mi instan, gorengan, fast food) <span class="text-red-500">*</span>
@@ -158,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- volume_air_putih -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblWater">
                         Volume Konsumsi Air Putih <span class="text-red-500">*</span>
@@ -187,7 +178,6 @@
                     <h2 class="text-xl font-bold text-slate-800" id="cat3Title">Aktivitas & Istirahat</h2>
                 </div>
 
-                <!-- rutinitas_olahraga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblExercise">
                         Rutinitas Olahraga (minimal 30 menit) <span class="text-red-500">*</span>
@@ -208,7 +198,6 @@
                     </div>
                 </div>
 
-                <!-- durasi_screen_time -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblScreen">
                         Durasi Screen Time di Luar Jam Sekolah/Kerja <span class="text-red-500">*</span>
@@ -229,7 +218,6 @@
                     </div>
                 </div>
 
-                <!-- durasi_tidur_malam -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblSleep">
                         Durasi Tidur Malam <span class="text-red-500">*</span>
@@ -254,7 +242,6 @@
                     <h2 class="text-xl font-bold text-slate-800" id="cat4Title">Riwayat Kesehatan & Gejala</h2>
                 </div>
 
-                <!-- riwayat_diabetes_keluarga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblFamilyDiabetes">
                         Riwayat Diabetes pada Keluarga Kandung <span class="text-red-500">*</span>
@@ -271,7 +258,6 @@
                     </div>
                 </div>
 
-                <!-- riwayat_hipertensi_ginjal_keluarga -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-3" id="lblFamilyKidney">
                         Riwayat Hipertensi / Gangguan Ginjal pada Keluarga Inti <span class="text-red-500">*</span>
@@ -288,7 +274,6 @@
                     </div>
                 </div>
 
-                <!-- Variabel Gejala (Checkbox) -->
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1" id="lblSymptoms">
                         Gejala yang sedang dialami belakangan ini:
@@ -331,225 +316,112 @@
             </div>
 
         </form>
-
-        <!-- CONTAINER HASIL (HIDDEN SECARA DEFAULT) -->
-        <div id="resultContainer" class="hidden mt-12 pt-8 border-t-2 border-slate-200">
-            
-            <div class="text-center mb-8">
-                <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" id="resHeaderBadge">Hasil Riset</span>
-                <h2 class="text-3xl font-bold text-slate-800 mt-2" id="resTitle">Laporan Skrining Risiko</h2>
-            </div>
-
-            <!-- Risk Card -->
-            <div id="riskCard" class="p-8 rounded-2xl text-center border mb-10 transition-all">
-                <p class="text-sm font-semibold uppercase tracking-wider mb-2" id="riskBadge">Tingkat Risiko</p>
-                
-                <div class="flex items-baseline justify-center space-x-1">
-                    <span class="text-6xl font-black" id="persentaseText">0</span>
-                    <span class="text-3xl font-bold">%</span>
-                </div>
-
-                <p class="text-sm mt-3 font-medium" id="skorDetailText">Skor Total: 0 / 31 Poin</p>
-                
-                <!-- Progress Bar -->
-                <div class="w-full bg-slate-200 h-3 rounded-full mt-6 overflow-hidden">
-                    <div id="progressBar" class="h-full transition-all duration-1000 rounded-full" style="width: 0%;"></div>
-                </div>
-
-                <p class="text-sm mt-6 text-slate-700 font-normal max-w-lg mx-auto leading-relaxed" id="rekomendasiText">
-                    -
-                </p>
-            </div>
-
-            <!-- Rincian Skor -->
-            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 space-y-4 text-sm">
-                <h3 class="font-bold text-slate-800 border-b pb-2 text-base" id="resSummaryTitle">Ringkasan Skor Variabel:</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-600" id="resSummaryList">
-                    <!-- Dynamic Summary List -->
-                </div>
-            </div>
-
-            <div class="mt-8 flex space-x-4">
-                <button onclick="window.print()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all" id="btnPrint">
-                    Cetak Hasil (PDF)
-                </button>
-                <button onclick="resetSurvey()" class="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-center transition-all" id="btnReset">
-                    Isi Ulang Kuesioner
-                </button>
-            </div>
-
-        </div>
-
     </div>
 
-    <!-- LOGIKA JAVASCRIPT -->
     <script>
         let currentLang = 'id';
 
-        // DICTIONARY DUA BAHASA (ID & EN)
         const translations = {
             id: {
                 uiBadge: "Aplikasi Riset Kesehatan",
                 uiTitle: "Skrining Risiko Diabetes & Gangguan Ginjal",
                 uiSubtitle: "Isi kuesioner berikut secara akurat untuk menghitung estimasi persentase risiko Anda.",
-                
                 cat1Title: "Profil Fisik & Demografi",
                 lblGender: "Jenis Kelamin Biologis",
-                optMale: "Laki-laki",
-                optFemale: "Perempuan",
-                lblAge: "Usia saat ini (10 - 19 tahun)",
-                unitAge: "tahun",
-                lblHeight: "Tinggi Badan",
-                lblWeight: "Berat Badan",
-
+                optMale: "Laki-laki", optFemale: "Perempuan",
+                lblAge: "Usia saat ini (10 - 19 tahun)", unitAge: "tahun",
+                lblHeight: "Tinggi Badan", lblWeight: "Berat Badan",
                 cat2Title: "Pola Makan & Hidrasi",
                 lblSweetDrinks: "Frekuensi Minuman Manis (boba, kopi susu, soda, teh kemasan, dll)",
                 optSweetA: "Opsi A (Jarang atau tidak pernah)",
                 optSweetB: "Opsi B (Kadang-kadang 1-3 kali seminggu)",
                 optSweetC: "Opsi C (Sering banget hampir setiap hari)",
-                
                 lblFastFood: "Frekuensi Makanan Instan / Olahan (mi instan, gorengan, fast food)",
                 optFoodA: "Opsi A (Jarang <= 2 kali seminggu)",
                 optFoodB: "Opsi B (Lumayan sering 3-5 kali seminggu)",
                 optFoodC: "Opsi C (Setiap hari)",
-
                 lblWater: "Volume Konsumsi Air Putih",
                 optWaterA: "Opsi A (Banyak minimal 8 gelas sehari)",
                 optWaterB: "Opsi B (Sedikit sekitar 4-7 gelas sehari)",
                 optWaterC: "Opsi C (Kurang banget < 4 gelas sehari)",
-
                 cat3Title: "Aktivitas & Istirahat",
                 lblExercise: "Rutinitas Olahraga (minimal 30 menit)",
                 optExA: "Opsi A (Ya rutin hampir setiap hari)",
                 optExB: "Opsi B (Jarang-jarang 1-2 kali seminggu)",
                 optExC: "Opsi C (Jarang banget atau hampir tidak pernah)",
-
                 lblScreen: "Durasi Screen Time di Luar Jam Sekolah/Kerja",
                 optScrA: "Opsi A (Kurang dari 2 jam sehari)",
                 optScrB: "Opsi B (Sekitar 2-4 jam sehari)",
                 optScrC: "Opsi C (Lebih dari 4 jam sehari)",
-
                 lblSleep: "Durasi Tidur Malam",
                 optSlpA: "Opsi A (Cukup dan teratur 7-9 jam semalam)",
                 optSlpB: "Opsi B (Kurang tidur atau sering begadang)",
-
                 cat4Title: "Riwayat Kesehatan & Gejala",
                 lblFamilyDiabetes: "Riwayat Diabetes pada Keluarga Kandung",
-                optDiabFalse: "Tidak Ada (False)",
-                optDiabTrue: "Ada (True)",
-
+                optDiabFalse: "Tidak Ada (False)", optDiabTrue: "Ada (True)",
                 lblFamilyKidney: "Riwayat Hipertensi / Gangguan Ginjal pada Keluarga Inti",
-                optKidFalse: "Tidak Ada (False)",
-                optKidTrue: "Ada (True)",
-
+                optKidFalse: "Tidak Ada (False)", optKidTrue: "Ada (True)",
                 lblSymptoms: "Gejala yang sedang dialami belakangan ini:",
                 lblSympNote: "(Centang jika merasakan gejala berikut)",
                 lblSymp1: "Sering haus berlebih & kencing malam",
                 lblSymp2: "Mudah lelah & lemas",
                 lblSymp3: "Urine berbusa tebal",
                 lblSympNone: "Tidak merasakan gejala apapun",
-
-                btnSubmit: "Hitung Risiko & Lihat Hasil",
-                
-                // Result Section
-                resHeaderBadge: "Hasil Riset",
-                resTitle: "Laporan Skrining Risiko",
-                resSummaryTitle: "Ringkasan Skor Variabel:",
-                btnPrint: "Cetak Hasil (PDF)",
-                btnReset: "Isi Ulang Kuesioner",
-                
-                lowRiskTitle: "Kategori: Risiko Rendah",
-                lowRiskDesc: "Gaya hidup Anda tergolong baik. Tetap pertahankan konsumsi air putih dan rutinitas olahraga harian.",
-                medRiskTitle: "Kategori: Risiko Sedang",
-                medRiskDesc: "Anda memiliki beberapa faktor risiko. Mulailah membatasi minuman manis/makanan instan dan tingkatkan aktivitas fisik.",
-                highRiskTitle: "Kategori: Risiko Tinggi",
-                highRiskDesc: "Akumulasi skor risiko Anda cukup tinggi. Disarankan untuk berkonsultasi dengan fasilitas kesehatan untuk pemeriksaan medis berkala."
+                btnSubmit: "Hitung Risiko & Lihat Hasil"
             },
             en: {
                 uiBadge: "Health Research App",
                 uiTitle: "Diabetes & Kidney Disease Risk Screening",
                 uiSubtitle: "Fill out the questionnaire accurately to calculate your estimated risk percentage.",
-                
                 cat1Title: "Physical Profile & Demographics",
                 lblGender: "Biological Sex",
-                optMale: "Male",
-                optFemale: "Female",
-                lblAge: "Current Age (10 - 19 years old)",
-                unitAge: "years",
-                lblHeight: "Height",
-                lblWeight: "Weight",
-
+                optMale: "Male", optFemale: "Female",
+                lblAge: "Current Age (10 - 19 years old)", unitAge: "years",
+                lblHeight: "Height", lblWeight: "Weight",
                 cat2Title: "Diet & Hydration",
                 lblSweetDrinks: "Sugary Drinks Frequency (boba, sweet coffee, soda, packaged tea)",
                 optSweetA: "Option A (Rarely or never)",
                 optSweetB: "Option B (Occasionally 1-3 times a week)",
                 optSweetC: "Option C (Very frequently almost every day)",
-
                 lblFastFood: "Instant / Processed Food Frequency (instant noodles, fried snacks, fast food)",
                 optFoodA: "Option A (Rarely <= 2 times a week)",
                 optFoodB: "Option B (Quite often 3-5 times a week)",
                 optFoodC: "Option C (Every day)",
-
                 lblWater: "Water Intake Volume",
                 optWaterA: "Option A (Plentiful, at least 8 glasses a day)",
                 optWaterB: "Option B (Few, around 4-7 glasses a day)",
                 optWaterC: "Option C (Very little, < 4 glasses a day)",
-
                 cat3Title: "Activity & Rest",
                 lblExercise: "Exercise Routine (minimum 30 minutes)",
                 optExA: "Option A (Yes, regularly almost every day)",
                 optExB: "Option B (Occasionally 1-2 times a week)",
                 optExC: "Option C (Very rarely or almost never)",
-
                 lblScreen: "Screen Time Duration Outside School/Work",
                 optScrA: "Option A (Less than 2 hours a day)",
                 optScrB: "Option B (Around 2-4 hours a day)",
                 optScrC: "Option C (More than 4 hours a day)",
-
                 lblSleep: "Night Sleep Duration",
                 optSlpA: "Option A (Adequate & regular 7-9 hours a night)",
                 optSlpB: "Option B (Sleep-deprived or stay up late often)",
-
                 cat4Title: "Medical History & Symptoms",
                 lblFamilyDiabetes: "Family History of Diabetes",
-                optDiabFalse: "No / None (False)",
-                optDiabTrue: "Yes / Present (True)",
-
+                optDiabFalse: "No / None (False)", optDiabTrue: "Yes / Present (True)",
                 lblFamilyKidney: "Family History of Hypertension / Kidney Disease",
-                optKidFalse: "No / None (False)",
-                optKidTrue: "Yes / Present (True)",
-
+                optKidFalse: "No / None (False)", optKidTrue: "Yes / Present (True)",
                 lblSymptoms: "Symptoms currently experienced recently:",
                 lblSympNote: "(Check if you experience any of the following)",
                 lblSymp1: "Excessive thirst & frequent nighttime urination",
                 lblSymp2: "Easily fatigued & weak",
                 lblSymp3: "Thick foamy urine",
                 lblSympNone: "No symptoms experienced",
-
-                btnSubmit: "Calculate Risk & View Results",
-
-                // Result Section
-                resHeaderBadge: "Research Result",
-                resTitle: "Risk Screening Report",
-                resSummaryTitle: "Variable Score Summary:",
-                btnPrint: "Print Result (PDF)",
-                btnReset: "Retake Questionnaire",
-
-                lowRiskTitle: "Category: Low Risk",
-                lowRiskDesc: "Your lifestyle is good. Keep up your hydration and regular exercise routine.",
-                medRiskTitle: "Category: Moderate Risk",
-                medRiskDesc: "You have several risk factors. Consider reducing sugary drinks/instant food and increasing physical activity.",
-                highRiskTitle: "Category: High Risk",
-                highRiskDesc: "Your accumulated risk score is high. It is recommended to consult with a healthcare professional for routine check-ups."
+                btnSubmit: "Calculate Risk & View Results"
             }
         };
 
-        // GANTI BAHASA DYNAMIC
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
 
-            // Toggle Button Style
             if (lang === 'id') {
                 document.getElementById('btnLangID').className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-sm";
                 document.getElementById('btnLangEN').className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
@@ -558,14 +430,12 @@
                 document.getElementById('btnLangID').className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
             }
 
-            // Update UI Labels
             for (let key in t) {
                 const el = document.getElementById(key);
                 if (el) el.innerText = t[key];
             }
         }
 
-        // LOCKING GEJALA LOGIC
         const chkTidakAda = document.getElementById('gejala_tidak_ada');
         const gejalaCheckboxes = document.querySelectorAll('.gejala-checkbox');
 
@@ -584,35 +454,48 @@
             }
         });
 
-        // FORM SUBMIT HANDLER
+        // FORM SUBMIT DENGAN STRATEGI WEBSTORAGE REFORME
         document.getElementById('healthForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const t = translations[currentLang];
-
-            // 1. Kategori 1
+            // Profile
+            const jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked')?.value || '-';
+            const usiaTahun = parseInt(document.getElementById('usia_tahun').value) || 0;
             const tinggiBadanCm = parseFloat(document.getElementById('tinggi_badan_cm').value) || 0;
             const beratBadanKg = parseFloat(document.getElementById('berat_badan_kg').value) || 0;
-            const tinggiM = tinggiBadanCm / 100;
+
+            const tinggiM = tinggiBadanCm > 0 ? tinggiBadanCm / 100 : 0;
             const imt = tinggiM > 0 ? (beratBadanKg / (tinggiM * tinggiM)) : 0;
 
             let skorIMT = 0;
             if (imt >= 23.0 && imt <= 24.9) skorIMT = 2;
             else if (imt >= 25.0) skorIMT = 4;
 
-            // 2. Kategori 2
-            const skorMinuman = parseInt(document.querySelector('input[name="frekuensi_minuman_manis"]:checked')?.dataset.poin || 0);
-            const skorMakanan = parseInt(document.querySelector('input[name="frekuensi_makanan_instan"]:checked')?.dataset.poin || 0);
-            const skorAir = parseInt(document.querySelector('input[name="volume_air_putih"]:checked')?.dataset.poin || 0);
+            // Kebiasaan
+            const elMinuman = document.querySelector('input[name="frekuensi_minuman_manis"]:checked');
+            const skorMinumanManis = parseInt(elMinuman?.dataset.poin || 0);
 
-            // 3. Kategori 3
-            const skorOlahraga = parseInt(document.querySelector('input[name="rutinitas_olahraga"]:checked')?.dataset.poin || 0);
-            const skorScreen = parseInt(document.querySelector('input[name="durasi_screen_time"]:checked')?.dataset.poin || 0);
-            const skorTidur = parseInt(document.querySelector('input[name="durasi_tidur_malam"]:checked')?.dataset.poin || 0);
+            const elMakanan = document.querySelector('input[name="frekuensi_makanan_instan"]:checked');
+            const skorMakananInstan = parseInt(elMakanan?.dataset.poin || 0);
 
-            // 4. Kategori 4
-            const skorDiabetes = parseInt(document.querySelector('input[name="riwayat_diabetes_keluarga"]:checked')?.dataset.poin || 0);
-            const skorGinjal = parseInt(document.querySelector('input[name="riwayat_hipertensi_ginjal_keluarga"]:checked')?.dataset.poin || 0);
+            const elAir = document.querySelector('input[name="volume_air_putih"]:checked');
+            const skorVolumeAir = parseInt(elAir?.dataset.poin || 0);
+
+            const elOlahraga = document.querySelector('input[name="rutinitas_olahraga"]:checked');
+            const skorRutinitasOlahraga = parseInt(elOlahraga?.dataset.poin || 0);
+
+            const elScreen = document.querySelector('input[name="durasi_screen_time"]:checked');
+            const skorDurasiScreen = parseInt(elScreen?.dataset.poin || 0);
+
+            const elTidur = document.querySelector('input[name="durasi_tidur_malam"]:checked');
+            const skorDurasiTidur = parseInt(elTidur?.dataset.poin || 0);
+
+            // Riwayat & Gejala
+            const elDiabetes = document.querySelector('input[name="riwayat_diabetes_keluarga"]:checked');
+            const skorRiwayatDiabetes = parseInt(elDiabetes?.dataset.poin || 0);
+
+            const elGinjal = document.querySelector('input[name="riwayat_hipertensi_ginjal_keluarga"]:checked');
+            const skorRiwayatGinjal = parseInt(elGinjal?.dataset.poin || 0);
 
             let skorHausKencing = 0;
             let skorLelahLemas = 0;
@@ -624,85 +507,46 @@
                 if (document.getElementById('gejala_urine_berbusa_tebal').checked) skorUrineBerbusa = 2;
             }
 
-            // TOTAL SKOR (Maks 31)
-            const skorTotal = skorIMT + skorMinuman + skorMakanan + skorAir + 
-                              skorOlahraga + skorScreen + skorTidur + 
-                              skorDiabetes + skorGinjal + 
-                              skorHausKencing + skorLelahLemas + skorUrineBerbusa;
+            // Total Skor Poin
+            const skorTotal = (skorIMT || 0) + (skorMinumanManis || 0) + (skorMakananInstan || 0) + 
+                              (skorVolumeAir || 0) + (skorRutinitasOlahraga || 0) + (skorDurasiScreen || 0) + 
+                              (skorDurasiTidur || 0) + (skorRiwayatDiabetes || 0) + (skorRiwayatGinjal || 0) + 
+                              (skorHausKencing || 0) + (skorLelahLemas || 0) + (skorUrineBerbusa || 0);
 
+            // Perhitungan Persentase Aman Tanpa NaN
             const persentase = ((skorTotal / 31) * 100).toFixed(1);
 
-            // RENDER HASIL SAN
-            document.getElementById('persentaseText').innerText = persentase;
-            document.getElementById('skorDetailText').innerText = `Skor Total: ${skorTotal} / 31 Poin`;
+            const payloadData = {
+                lang: currentLang,
+                jenis_kelamin: jenisKelamin,
+                usia_tahun: usiaTahun,
+                tinggi_badan_cm: tinggiBadanCm,
+                berat_badan_kg: beratBadanKg,
+                indeks_massa_tubuh: isNaN(imt) ? "0.0" : imt.toFixed(1),
+                skor_indeks_massa_tubuh: skorIMT,
+                skor_frekuensi_minuman_manis: skorMinumanManis,
+                skor_frekuensi_makanan_instan: skorMakananInstan,
+                skor_volume_air_putih: skorVolumeAir,
+                skor_rutinitas_olahraga: skorRutinitasOlahraga,
+                skor_durasi_screen_time: skorDurasiScreen,
+                skor_durasi_tidur_malam: skorDurasiTidur,
+                skor_riwayat_diabetes_keluarga: skorRiwayatDiabetes,
+                skor_riwayat_hipertensi_ginjal_keluarga: skorRiwayatGinjal,
+                skor_gejala_haus_kencing: skorHausKencing,
+                skor_gejala_lelah_lemas: skorLelahLemas,
+                skor_gejala_urine_berbusa: skorUrineBerbusa,
+                skor_total: skorTotal,
+                persentase_risiko: isNaN(parseFloat(persentase)) ? "0.0" : persentase
+            };
 
-            // Gauge & Kategori
-            const card = document.getElementById('riskCard');
-            const badge = document.getElementById('riskBadge');
-            const progressBar = document.getElementById('progressBar');
-            const rekomendasi = document.getElementById('rekomendasiText');
+            // SIMPAN DI LOCALSTORAGE DAN SESSIONSTORAGE SEKALIGUS
+            const serialized = JSON.stringify(payloadData);
+            localStorage.setItem('healthResearchData', serialized);
+            sessionStorage.setItem('healthResearchData', serialized);
 
-            card.className = "p-8 rounded-2xl text-center border mb-10 transition-all ";
-            progressBar.className = "h-full transition-all duration-1000 rounded-full ";
-
-            if (persentase < 25) {
-                card.className += "bg-emerald-50/50 border-emerald-200 text-emerald-900";
-                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-emerald-600";
-                progressBar.className += "bg-emerald-500";
-                badge.innerText = t.lowRiskTitle;
-                rekomendasi.innerText = t.lowRiskDesc;
-            } else if (persentase >= 25 && persentase < 50) {
-                card.className += "bg-yellow-50/50 border-yellow-200 text-yellow-900";
-                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-yellow-600";
-                progressBar.className += "bg-yellow-500";
-                badge.innerText = t.medRiskTitle;
-                rekomendasi.innerText = t.medRiskDesc;
-            } else {
-                card.className += "bg-rose-50/50 border-rose-200 text-rose-900";
-                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-rose-600";
-                progressBar.className += "bg-rose-500";
-                badge.innerText = t.highRiskTitle;
-                rekomendasi.innerText = t.highRiskDesc;
-            }
-
-            // Summary List
-            const summaryHTML = `
-                <div>• IMT: <strong>${imt.toFixed(1)} (${skorIMT} Poin)</strong></div>
-                <div>• ${t.lblSweetDrinks.split('(')[0]}: <strong>${skorMinuman} Poin</strong></div>
-                <div>• ${t.lblFastFood.split('(')[0]}: <strong>${skorMakanan} Poin</strong></div>
-                <div>• ${t.lblWater}: <strong>${skorAir} Poin</strong></div>
-                <div>• ${t.lblExercise.split('(')[0]}: <strong>${skorOlahraga} Poin</strong></div>
-                <div>• ${t.lblScreen}: <strong>${skorScreen} Poin</strong></div>
-                <div>• ${t.lblSleep}: <strong>${skorTidur} Poin</strong></div>
-                <div>• ${t.lblFamilyDiabetes}: <strong>${skorDiabetes} Poin</strong></div>
-                <div>• ${t.lblFamilyKidney}: <strong>${skorGinjal} Poin</strong></div>
-                <div>• ${t.lblSymptoms}: <strong>${skorHausKencing + skorLelahLemas + skorUrineBerbusa} Poin</strong></div>
-            `;
-            document.getElementById('resSummaryList').innerHTML = summaryHTML;
-
-            // Show Result Section
-            const resContainer = document.getElementById('resultContainer');
-            resContainer.classList.remove('hidden');
-            
-            setTimeout(() => {
-                progressBar.style.width = `${Math.min(persentase, 100)}%`;
-                resContainer.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            // Navigasi
+            window.location.href = 'result.html';
         });
-
-        // RESET SURVEY
-        function resetSurvey() {
-            document.getElementById('healthForm').reset();
-            document.getElementById('resultContainer').classList.add('hidden');
-            document.getElementById('progressBar').style.width = '0%';
-            
-            gejalaCheckboxes.forEach(chk => {
-                chk.disabled = false;
-                chk.closest('label').classList.remove('opacity-50', 'pointer-events-none');
-            });
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
     </script>
 </body>
 </html>

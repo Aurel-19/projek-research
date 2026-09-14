@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Riset Skrining Kesehatan</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 py-12">
 
     <div class="bg-white rounded-2xl shadow-xl w-full max-w-3xl p-6 sm:p-10 border border-slate-100">
         
-        <!-- Header -->
         <div class="text-center border-b border-slate-100 pb-6 mb-8">
-            <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Hasil Riset</span>
-            <h1 class="text-3xl font-bold text-slate-800 mt-3">Laporan Skrining Risiko</h1>
-            <p class="text-sm text-slate-500 mt-1">Berdasarkan Akumulasi Skor Algoritma 31 Poin</p>
+            <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" id="resBadge">Hasil Riset</span>
+            <h1 class="text-3xl font-bold text-slate-800 mt-3" id="resTitle">Laporan Skrining Risiko</h1>
+            <p class="text-sm text-slate-500 mt-1" id="resSubtitle">Berdasarkan Akumulasi Skor Algoritma 31 Poin</p>
         </div>
 
-        <!-- Risk Card Dashboard -->
         <div id="riskCard" class="p-8 rounded-2xl text-center border mb-10 transition-all">
             <p class="text-sm font-semibold uppercase tracking-wider mb-2" id="riskBadge">Tingkat Risiko</p>
             
             <div class="flex items-baseline justify-center space-x-1">
-                <span class="text-6xl font-black" id="persentaseText">0</span>
+                <span class="text-6xl font-black" id="persentaseText">0.0</span>
                 <span class="text-3xl font-bold">%</span>
             </div>
 
             <p class="text-sm mt-3 font-medium" id="skorDetailText">Skor Total: 0 / 31 Poin</p>
             
-            <!-- Progress Bar -->
             <div class="w-full bg-slate-200 h-3 rounded-full mt-6 overflow-hidden">
                 <div id="progressBar" class="h-full transition-all duration-1000 rounded-full" style="width: 0%;"></div>
             </div>
@@ -39,80 +35,35 @@
             </p>
         </div>
 
-        <!-- Detail Variabel Kebiasaan & Medis -->
+        <!-- Detail Variabel -->
         <div class="space-y-6">
-            <h2 class="text-lg font-bold text-slate-800 border-b pb-3">Rincian Variabel & Skor</h2>
+            <h2 class="text-lg font-bold text-slate-800 border-b pb-3" id="lblDetailTitle">Rincian Variabel & Skor</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <span class="text-slate-400 block text-xs">Jenis Kelamin</span>
+                    <span class="text-slate-400 block text-xs" id="lblResGender">Jenis Kelamin</span>
                     <span class="font-semibold text-slate-700" id="resGender">-</span>
                 </div>
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <span class="text-slate-400 block text-xs">Usia</span>
+                    <span class="text-slate-400 block text-xs" id="lblResAge">Usia</span>
                     <span class="font-semibold text-slate-700" id="resUsia">-</span>
                 </div>
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <span class="text-slate-400 block text-xs">Tinggi / Berat Badan</span>
+                    <span class="text-slate-400 block text-xs" id="lblResTBWB">Tinggi / Berat Badan</span>
                     <span class="font-semibold text-slate-700" id="resTBWB">-</span>
                 </div>
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <span class="text-slate-400 block text-xs">Indeks Massa Tubuh (IMT)</span>
+                    <span class="text-slate-400 block text-xs" id="lblResIMT">Indeks Massa Tubuh (IMT)</span>
                     <span class="font-semibold text-slate-700" id="resIMT">-</span>
-                </div>
-            </div>
-
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm space-y-3">
-                <h3 class="font-semibold text-slate-800 border-b pb-2">Kategori Gaya Hidup:</h3>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Frekuensi Minuman Manis:</span>
-                    <span class="font-medium text-slate-800" id="resMinuman">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Frekuensi Makanan Instan:</span>
-                    <span class="font-medium text-slate-800" id="resMakanan">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Volume Air Putih:</span>
-                    <span class="font-medium text-slate-800" id="resAir">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Rutinitas Olahraga:</span>
-                    <span class="font-medium text-slate-800" id="resOlahraga">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Durasi Screen Time:</span>
-                    <span class="font-medium text-slate-800" id="resScreen">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Durasi Tidur Malam:</span>
-                    <span class="font-medium text-slate-800" id="resTidur">-</span>
-                </div>
-            </div>
-
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm space-y-3">
-                <h3 class="font-semibold text-slate-800 border-b pb-2">Riwayat Kesehatan & Gejala:</h3>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Riwayat Diabetes Keluarga:</span>
-                    <span class="font-medium text-slate-800" id="resDiabetes">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Riwayat Hipertensi / Ginjal Keluarga:</span>
-                    <span class="font-medium text-slate-800" id="resGinjal">-</span>
-                </div>
-                <div class="pt-2 border-t border-slate-200">
-                    <span class="text-slate-500 block mb-1">Gejala Terdeteksi:</span>
-                    <span class="font-medium text-slate-800" id="resGejala">-</span>
                 </div>
             </div>
         </div>
 
-        <!-- Tombol Aksi -->
         <div class="mt-10 pt-6 border-t border-slate-100 flex space-x-4">
-            <button onclick="window.print()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all">
+            <button onclick="window.print()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl transition-all" id="btnPrint">
                 Cetak Hasil (PDF)
             </button>
-            <a href="index.html" class="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-center transition-all">
+            <a href="index.html" class="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-center transition-all flex items-center justify-center" id="btnRetry">
                 Isi Ulang Kuesioner
             </a>
         </div>
@@ -120,46 +71,103 @@
     </div>
 
     <script>
-        const rawData = localStorage.getItem('healthResearchData');
+        // FUNGSI KHUSUS PROTEKSI ANTI NaN
+        function safeNum(val) {
+            const parsed = parseFloat(val);
+            return isNaN(parsed) ? 0 : parsed;
+        }
+
+        // BACA DATA DENGAN SISTEM DUAL WEB STORAGE (localStorage / sessionStorage fallback)
+        let rawData = localStorage.getItem('healthResearchData');
+        if (!rawData) {
+            rawData = sessionStorage.getItem('healthResearchData');
+        }
 
         if (!rawData) {
-            alert('Belum ada data kuesioner. Silakan isi form terlebih dahulu.');
+            alert('Data kuesioner tidak ditemukan. Silakan isi form kuesioner kembali.');
             window.location.href = 'index.html';
         } else {
-            const data = JSON.parse(rawData);
+            let data = {};
+            try {
+                data = JSON.parse(rawData);
+            } catch (err) {
+                data = {};
+            }
 
-            // Render Teks Profil
-            document.getElementById('resGender').innerText = data.jenis_kelamin;
-            document.getElementById('resUsia').innerText = data.usia_tahun + ' Tahun';
-            document.getElementById('resTBWB').innerText = `${data.tinggi_badan_cm} cm / ${data.berat_badan_kg} kg`;
-            document.getElementById('resIMT').innerText = `${data.indeks_massa_tubuh} (${data.skor_indeks_massa_tubuh} Poin)`;
+            const lang = data.lang || 'id';
 
-            // Render Kebiasaan
-            document.getElementById('resMinuman').innerText = `${data.frekuensi_minuman_manis} (${data.skor_frekuensi_minuman_manis} Poin)`;
-            document.getElementById('resMakanan').innerText = `${data.frekuensi_makanan_instan} (${data.skor_frekuensi_makanan_instan} Poin)`;
-            document.getElementById('resAir').innerText = `${data.volume_air_putih} (${data.skor_volume_air_putih} Poin)`;
-            document.getElementById('resOlahraga').innerText = `${data.rutinitas_olahraga} (${data.skor_rutinitas_olahraga} Poin)`;
-            document.getElementById('resScreen').innerText = `${data.durasi_screen_time} (${data.skor_durasi_screen_time} Poin)`;
-            document.getElementById('resTidur').innerText = `${data.durasi_tidur_malam} (${data.skor_durasi_tidur_malam} Poin)`;
+            // Dictionay Teks
+            const textDict = {
+                id: {
+                    resBadge: "Hasil Riset",
+                    resTitle: "Laporan Skrining Risiko",
+                    resSubtitle: "Berdasarkan Akumulasi Skor Algoritma 31 Poin",
+                    lblDetailTitle: "Rincian Variabel & Skor",
+                    lblResGender: "Jenis Kelamin",
+                    lblResAge: "Usia",
+                    lblResTBWB: "Tinggi / Berat Badan",
+                    lblResIMT: "Indeks Massa Tubuh (IMT)",
+                    btnPrint: "Cetak Hasil (PDF)",
+                    btnRetry: "Isi Ulang Kuesioner",
+                    lowTitle: "Kategori: Risiko Rendah",
+                    lowDesc: "Gaya hidup Anda tergolong baik. Tetap pertahankan hidrasi dan rutinitas aktivitas fisik harian Anda.",
+                    medTitle: "Kategori: Risiko Sedang",
+                    medDesc: "Anda memiliki beberapa faktor risiko. Disarankan untuk membatasi konsumsi gula/makanan instan dan menambah jam olahraga.",
+                    highTitle: "Kategori: Risiko Tinggi",
+                    highDesc: "Akumulasi skor faktor risiko Anda tergolong tinggi. Sangat disarankan untuk berkonsultasi dengan fasilitas kesehatan untuk evaluasi medis."
+                },
+                en: {
+                    resBadge: "Research Result",
+                    resTitle: "Risk Screening Report",
+                    resSubtitle: "Based on 31-Point Accumulation Score Algorithm",
+                    lblDetailTitle: "Variable & Score Details",
+                    lblResGender: "Biological Sex",
+                    lblResAge: "Age",
+                    lblResTBWB: "Height / Weight",
+                    lblResIMT: "Body Mass Index (BMI)",
+                    btnPrint: "Print Result (PDF)",
+                    btnRetry: "Retake Questionnaire",
+                    lowTitle: "Category: Low Risk",
+                    lowDesc: "Your lifestyle is currently good. Keep maintaining proper hydration and daily activity.",
+                    medTitle: "Category: Moderate Risk",
+                    medDesc: "You have several risk factors. It is recommended to reduce sugary/instant food and increase physical activity.",
+                    highTitle: "Category: High Risk",
+                    highDesc: "Your accumulated risk score is high. It is strongly recommended to consult a healthcare facility for routine health checks."
+                }
+            };
 
-            // Render Medis
-            document.getElementById('resDiabetes').innerText = `${data.riwayat_diabetes_keluarga ? 'Ada (True)' : 'Tidak Ada (False)'} (${data.skor_riwayat_diabetes_keluarga} Poin)`;
-            document.getElementById('resGinjal').innerText = `${data.riwayat_hipertensi_ginjal_keluarga ? 'Ada (True)' : 'Tidak Ada (False)'} (${data.skor_riwayat_hipertensi_ginjal_keluarga} Poin)`;
+            const t = textDict[lang];
 
-            // Render Gejala
-            let daftarGejala = [];
-            if (data.gejala_sering_haus_kencing_malam) daftarGejala.push('Sering Haus & Kencing Malam (+2 Poin)');
-            if (data.gejala_mudah_lelah_lemas) daftarGejala.push('Mudah Lelah & Lemas (+1 Poin)');
-            if (data.gejala_urine_berbusa_tebal) daftarGejala.push('Urine Berbusa Tebal (+2 Poin)');
-            if (data.gejala_tidak_ada || daftarGejala.length === 0) daftarGejala = ['Tidak Ada Gejala (0 Poin)'];
+            // Render Text
+            document.getElementById('resBadge').innerText = t.resBadge;
+            document.getElementById('resTitle').innerText = t.resTitle;
+            document.getElementById('resSubtitle').innerText = t.resSubtitle;
+            document.getElementById('lblDetailTitle').innerText = t.lblDetailTitle;
+            document.getElementById('lblResGender').innerText = t.lblResGender;
+            document.getElementById('lblResAge').innerText = t.lblResAge;
+            document.getElementById('lblResTBWB').innerText = t.lblResTBWB;
+            document.getElementById('lblResIMT').innerText = t.lblResIMT;
+            document.getElementById('btnPrint').innerText = t.btnPrint;
+            document.getElementById('btnRetry').innerText = t.btnRetry;
 
-            document.getElementById('resGejala').innerText = daftarGejala.join(', ');
+            // Render Value
+            document.getElementById('resGender').innerText = data.jenis_kelamin || '-';
+            document.getElementById('resUsia').innerText = `${safeNum(data.usia_tahun)} ${lang === 'en' ? 'Years' : 'Tahun'}`;
+            document.getElementById('resTBWB').innerText = `${safeNum(data.tinggi_badan_cm)} cm / ${safeNum(data.berat_badan_kg)} kg`;
+            document.getElementById('resIMT').innerText = `${data.indeks_massa_tubuh || '0.0'} (${safeNum(data.skor_indeks_massa_tubuh)} Poin)`;
 
-            // UI Persentase & Progress
-            const persentase = parseFloat(data.persentase_risiko);
-            document.getElementById('persentaseText').innerText = persentase;
-            document.getElementById('skorDetailText').innerText = `Skor Total: ${data.skor_total} dari 31 Poin Maksimal`;
+            // HITUNG PERSENTASE AMAN DARI NaN
+            const skorTotal = safeNum(data.skor_total);
+            let persentase = safeNum(data.persentase_risiko);
 
+            if (persentase === 0 && skorTotal > 0) {
+                persentase = parseFloat(((skorTotal / 31) * 100).toFixed(1));
+            }
+
+            document.getElementById('persentaseText').innerText = persentase.toFixed(1);
+            document.getElementById('skorDetailText').innerText = `Skor Total: ${skorTotal} / 31 Poin`;
+
+            // UI Card Risk
             const card = document.getElementById('riskCard');
             const badge = document.getElementById('riskBadge');
             const progressBar = document.getElementById('progressBar');
@@ -169,25 +177,24 @@
                 progressBar.style.width = `${Math.min(persentase, 100)}%`;
             }, 100);
 
-            // Klasifikasi Risiko
             if (persentase < 25) {
-                card.className += " bg-emerald-50/50 border-emerald-200 text-emerald-900";
-                badge.className += " text-emerald-600";
-                progressBar.className += " bg-emerald-500";
-                badge.innerText = "Kategori: Risiko Rendah";
-                rekomendasi.innerText = "Gaya hidup Anda tergolong cukup sehat. Tetap jaga pola makan bergizi, cukupi kebutuhan air putih, serta pertahankan rutinitas olahraga harian.";
+                card.className = "p-8 rounded-2xl text-center border mb-10 transition-all bg-emerald-50/50 border-emerald-200 text-emerald-900";
+                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-emerald-600";
+                progressBar.className = "h-full transition-all duration-1000 rounded-full bg-emerald-500";
+                badge.innerText = t.lowTitle;
+                rekomendasi.innerText = t.lowDesc;
             } else if (persentase >= 25 && persentase < 50) {
-                card.className += " bg-yellow-50/50 border-yellow-200 text-yellow-900";
-                badge.className += " text-yellow-600";
-                progressBar.className += " bg-yellow-500";
-                badge.innerText = "Kategori: Risiko Sedang";
-                rekomendasi.innerText = "Anda memiliki beberapa faktor risiko. Disarankan untuk mulai membatasi makanan instan/minuman manis dan tingkatkan aktivitas fisik harian.";
+                card.className = "p-8 rounded-2xl text-center border mb-10 transition-all bg-yellow-50/50 border-yellow-200 text-yellow-900";
+                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-yellow-600";
+                progressBar.className = "h-full transition-all duration-1000 rounded-full bg-yellow-500";
+                badge.innerText = t.medTitle;
+                rekomendasi.innerText = t.medDesc;
             } else {
-                card.className += " bg-rose-50/50 border-rose-200 text-rose-900";
-                badge.className += " text-rose-600";
-                progressBar.className += " bg-rose-500";
-                badge.innerText = "Kategori: Risiko Tinggi";
-                rekomendasi.innerText = "Akumulasi skor faktor risiko Anda tergolong tinggi. Sangat disarankan untuk berkonsultasi dengan fasilitas kesehatan terdekat untuk pemeriksaan laboratorium medis lebih lanjut.";
+                card.className = "p-8 rounded-2xl text-center border mb-10 transition-all bg-rose-50/50 border-rose-200 text-rose-900";
+                badge.className = "text-sm font-semibold uppercase tracking-wider mb-2 text-rose-600";
+                progressBar.className = "h-full transition-all duration-1000 rounded-full bg-rose-500";
+                badge.innerText = t.highTitle;
+                rekomendasi.innerText = t.highDesc;
             }
         }
     </script>
